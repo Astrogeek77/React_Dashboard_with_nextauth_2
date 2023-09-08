@@ -8,8 +8,10 @@ import { authOptions } from '../app/api/auth/[...nextauth]/options'
 import getSession from '../helpers/sessionHelper'
 
 import SignoutButton from './signoutButton'
-async function Header({ toggleSidebar }) {
-  console.log(await getSession())
+function Header({ toggleSidebar }) {
+  // console.log(await getSession())
+  // const session = await getServerSession(authOptions)
+  // console.log(JSON.stringify(session))
   return (
     <div className="w-full flex items-center justify-between">
       <div className="flex gap-4 items-center text-lg md:text-3xl">
