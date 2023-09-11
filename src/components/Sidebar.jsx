@@ -1,7 +1,8 @@
 'use client'
 import React from 'react'
 
-function Sidebar() {
+function Sidebar({ userData }) {
+  console.log(userData)
   return (
     <div className="bg-[#000a] p-2 top-0 left-0 fixed z-10 h-full md:p-4 max-w-[280px] text-[#fff] transition-all">
       <h3 className="text-center text-xl md:text-3xl font-bold text-[#fff] ">
@@ -151,11 +152,20 @@ function Sidebar() {
             Contact us
           </a>
         </li>
-        {/* <li className="">
-          <a href="/profile" className="flex w-full p-2 justify-center gap-4">
-            Profile
-          </a>
-        </li> */}
+        {userData.username && (
+          <li className="">
+            <a className="flex w-full p-2 justify-center gap-4 pointer-none">
+              {userData.username}
+            </a>
+          </li>
+        )}
+        {userData.useremail && (
+          <li className="">
+            <a className="flex w-full p-2 justify-center gap-4 pointer-none hidden md:flex">
+              {userData.useremail}
+            </a>
+          </li>
+        )}
       </ul>
     </div>
   )
